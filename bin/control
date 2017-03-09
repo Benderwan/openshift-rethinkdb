@@ -25,7 +25,7 @@ function start() {
       client_result 'RethinkDB started.'
     else
       client_result 'Warning! Could not start RethinkDB!'
-      exit 1
+      #exit 1
     fi
   fi
 }
