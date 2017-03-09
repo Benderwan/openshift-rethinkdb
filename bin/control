@@ -15,7 +15,7 @@ function start() {
     client_result 'RethinkDB is already running.'
   else
     client_message 'Starting RethinkDB...'
-    nohup rethinkdb --daemon
+    nohup rethinkdb/rethinkdb --daemon
     i=0
     while ! is_running && [ $i -lt 120 ]; do
       sleep 1
