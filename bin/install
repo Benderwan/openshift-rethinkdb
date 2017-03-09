@@ -4,7 +4,7 @@ source $OPENSHIFT_CARTRIDGE_SDK_BASH
 
 # Download
 # curl -L -o ${OPENSHIFT_DATA_DIR}tmp.tgz https://download.rethinkdb.com/dist/rethinkdb-2.3.5.tgz
-wget https://download.rethinkdb.com/dist/rethinkdb-2.3.5.tgz
+git clone https://github.com/rethinkdb/rethinkdb.git
 
 # Create bin directory if necessary
 # mkdir -p ${OPENSHIFT_DATA_DIR}.mongodb/bin
@@ -12,16 +12,16 @@ wget https://download.rethinkdb.com/dist/rethinkdb-2.3.5.tgz
 # Copy just the mongod binary
 # tar -xvzf ${OPENSHIFT_DATA_DIR}tmp.tgz --strip-components=1 -C ${OPENSHIFT_DATA_DIR}.mongodb mongodb-linux-x86_64-${2}/bin/mongod
 
-tar xf rethinkdb-2.3.5.tgz
+# tar xf rethinkdb-2.3.5.tgz
 
-rethinkdb-2.3.5/configure --allow-fetch
+rethinkdb/configure --allow-fetch
 
 make
 
 # Remove downloaded archive
 #rm ${OPENSHIFT_DATA_DIR}tmp.tgz
 
-rm rethinkdb-2.3.5.tgz
+# rm rethinkdb-2.3.5.tgz
 
 # Create data directory if necessary
 # mkdir -p ${OPENSHIFT_DATA_DIR}.mongodb/data
